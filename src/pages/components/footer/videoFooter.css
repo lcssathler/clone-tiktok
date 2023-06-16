@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+@keyframes spin-record {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes move-music-title {
+  0% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(-80%);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, Verdana Arial, sans-serif;
+  color: #fff;
+}
+
+.videoFooter {
+  position: relative;
+  width: 89%;
+  margin: 0px 10px;
+  bottom: 140px;
+  padding-left: 20px;
+}
+
+.header {
+  display: flex;
+}
+
+.videoFooter h1 {
+  font: normal 500 1em Roboto;
+  letter-spacing: 2px;
+  padding-bottom: 20px;
+}
+
+.videoFooter p {
+  padding-bottom: 20px;
+}
+
+.videoFooter .music-bar {
+  display: flex;
+  width: 80%;
+  margin: 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.music-bar .music-icon {
+  height: 30px;
+  margin-right: 20px;
+  flex-basis: 8%;
+}
+
+.music-bar .music-title {
+    width: 50%;
+    overflow-x: hidden;
+}
+
+.music-title p {
+    animation: move-music-title 6s infinite linear;
+}
+
+.record-img {
+  position: absolute;
+  bottom: 15px;
+  height: 50px;
+  right: 20px;
+  filter: invert(1);
+  animation: spin-record 5s infinite linear;
+}
