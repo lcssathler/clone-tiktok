@@ -6,7 +6,7 @@ import CommentIcon from "@mui/icons-material/InsertComment";
 import WishlistIcon from "@mui/icons-material/TurnedIn";
 import ShareIcon from "@mui/icons-material/Share";
 
-function Sidebar() {
+function 	Sidebar( {likes, comments, shares, wishList}) {
 	const [isLiked, setIsLiked] = useState(false);
 	function handdleLike() {
 		setIsLiked(!isLiked);
@@ -16,22 +16,22 @@ function Sidebar() {
 		<div className="sidebar">
 			<div className="sidebar_options" onClick={handdleLike}>
 				{isLiked ? (<FilledHeartIcon fontSize="large" />) : (<UnfilledHeartIcon fontSize="large" className="icon" />)}
-				<p> {isLiked ? 300 + 1 : 300} </p>
+				<p> {isLiked ? likes + 1 : likes} </p>
 			</div>
 
 			<div className="sidebar_options">
 				<CommentIcon fontSize="large" className="icon" />
-				<p>300</p>
+				<p>{comments}</p>
 			</div>
 
 			<div className="sidebar_options">
 				<WishlistIcon fontSize="large" className="icon" />
-				<p>300</p>
+				<p> { wishList}</p>
 			</div>
 
 			<div className="sidebar_options">
 				<ShareIcon fontSize="large" className="icon" />
-				<p>300</p>
+				<p>{shares}</p>
 			</div>
 			<img
 				className="record-img"

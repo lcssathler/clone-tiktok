@@ -1,34 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 * {
-  margin: 0;
-  scroll-snap-type: y mandatory;
+	margin: 0;
+	scroll-snap-type: y mandatory;
 }
 
 .App {
-  background-color: #000000;
-  height: 100vh;
-  display: grid;
-  place-items: center;
+	background-color: #000000;
+	height: 100vh;
+	display: grid;
+	place-items: center;
 }
 
 .app__video {
-  width: 75%;
-  max-width: 500px;
-  height: 100vh;
-  max-height: 600px;
-  border: 2px solid #000000;
-  border-radius: 20px;
-  overflow: scroll;
-  scroll-snap-type: y mandatory;
-  position: relative;
+	position: relative;
+	width: 75%;
+	max-width: 500px;
+	height: 100vh;
+	max-height: 600px;
+	border: 2px solid #000000;
+	border-radius: 20px;
+	overflow: scroll;
+	scroll-snap-type: y mandatory;
+}
+
+.navbar-top {
+	position: fixed;
+	width: fit-content;
+	z-index: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	letter-spacing: 1px;
+	top: 15px;
+}
+.navbar-top .live-tv-icon {
+	padding-left: 30px;
+}
+
+.navbar-top .tabs {
+	display: inline-flex;
+	margin: 0px 50px;
+
+}
+
+.navbar-top .search-icon {
+	padding-right: 30px;
+}
+
+.tabs p {
+	margin: 0px 20px;
+	font: normal 600 18px Montserrat;
+	color: rgba(255, 255, 255, 0.918);
 }
 
 /* Hide scrollbar on chrome, safari and opera */
 .app__video::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 
 /* Hide scrollbar on explorer, edge and firefox */
 .app__video {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }
