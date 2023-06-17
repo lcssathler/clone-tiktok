@@ -29,7 +29,7 @@
   position: relative;
   width: 89%;
   margin: 0px 10px;
-  bottom: 140px;
+  bottom: 160px;
   padding-left: 20px;
 }
 
@@ -58,24 +58,18 @@
 
 .music-bar .music-icon {
   height: 30px;
+  margin-top: 2px;
   margin-right: 20px;
   flex-basis: 8%;
 }
 
 .music-bar .music-title {
     width: 50%;
+    padding-top: 5px;
     overflow-x: hidden;
+    flex-grow: 1;
 }
 
 .music-title p {
     animation: move-music-title 6s infinite linear;
-}
-
-.record-img {
-  position: absolute;
-  bottom: 15px;
-  height: 50px;
-  right: 20px;
-  filter: invert(1);
-  animation: spin-record 5s infinite linear;
 }

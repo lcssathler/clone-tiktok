@@ -1,0 +1,25 @@
+.sidebar {
+    position: absolute;
+    width: 15%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    top: 33%;
+    right: 10px;
+}
+
+.sidebar .sidebar_options {
+    position: relative;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.record-img {
+    bottom: 1px;
+    height: 45px;
+    filter: invert(1);
+    animation: spin-record 5s infinite linear;
+  }
