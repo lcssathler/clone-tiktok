@@ -1,10 +1,25 @@
 import "./App.css";
 import Video from "./pages/Video";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import db from "./config/firebase";
+import { collection, getDocs } from "firebase/firestore/lite";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
 import SearchIcon from "@mui/icons-material/Search";
 
 function App() {
+	const [video, setVideos] = useState([]);
+
+	async function getVideos() {
+		const videoCollection = collection(db, "videos");
+		const videoSnapshot = await getDocs(videoCollection);
+		const videoList = videoSnapshot.docs.map((doc) => doc.data());
+		setVideos(videoList);
+	}
+
+	useEffect(() => {
+		getVideos();
+	}, []);
+
 	return (
 		<div className="App">
 			<header className="app__video">
@@ -16,36 +31,21 @@ function App() {
 					</div>
 					<SearchIcon className="search-icon" fontSize="large" />
 				</nav>
-				<Video
-					likes={100}
-					comments={200}
-					wishList={500}
-					shares={300}
-					name="Lucas Sathler"
-					description="Galo goleiro boladão"
-					music="Still Loving You - Scorpions"
-					url="https://poqlymuephttfsljdabn.supabase.co/storage/v1/object/public/jornadadev/brecker2.mp4?t=2023-05-22T19%3A37%3A45.885Z"
-				/>
-				<Video
-					likes={100}
-					comments={200}
-					wishList={500}
-					shares={300}
-					name="Lucas Sathler"
-					description="Galo goleiro boladão"
-					music="Still Loving You - Scorpions"
-					url="https://poqlymuephttfsljdabn.supabase.co/storage/v1/object/public/jornadadev/brecker2.mp4?t=2023-05-22T19%3A37%3A45.885Z"
-				/>
-				<Video
-					likes={100}
-					comments={200}
-					wishList={500}
-					shares={300}
-					name="Lucas Sathler"
-					description="Galo goleiro boladão"
-					music="Still Loving You - Scorpions"
-					url="https://poqlymuephttfsljdabn.supabase.co/storage/v1/object/public/jornadadev/brecker2.mp4?t=2023-05-22T19%3A37%3A45.885Z"
-				/>
+
+				{video.map((item) => {
+					return (
+						<Video
+							likes={item.likes}
+							comments={item.comments}
+							music={item.music}
+							name={item.name}
+							shares={item.shares}
+							description={item.description}
+							url={item.url}
+							wishList={item.wishList}
+						/>
+					);
+				})}
 			</header>
 		</div>
 	);

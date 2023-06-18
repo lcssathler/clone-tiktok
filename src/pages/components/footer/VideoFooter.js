@@ -8,7 +8,7 @@ function VideoFooter({ name, description, music }) {
 			<h1> { name } </h1>
 			<p> { description} </p>
 			<div class="music-bar">
-				<MusicNoteIcon className="music-icon" />
+				<MusicNoteIcon className="music-icon" fontSize="large" />
 				<div class="music-title">
 					<p> { music} </p>
 				</div>
