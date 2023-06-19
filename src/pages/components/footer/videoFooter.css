@@ -1,75 +1,94 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 @keyframes spin-record {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 @keyframes move-music-title {
-  0% {
-    transform: translateX(150%);
-  }
-  100% {
-    transform: translateX(-80%);
-  }
+	0% {
+		transform: translateX(150%);
+	}
+	100% {
+		transform: translateX(-80%);
+	}
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  font-family: Roboto, Verdana Arial, sans-serif;
-  color: #fff;
+	margin: 0;
+	padding: 0;
+	font-family: Roboto, Verdana Arial, sans-serif;
+	color: #fff;
 }
 
 .videoFooter {
-  position: relative;
-  width: 89%;
-  margin: 0px 10px;
-  bottom: 160px;
-  padding-left: 20px;
+	position: relative;
+	width: 89%;
+	margin: 0px 10px;
+	top: -25%;
+	padding-left: 20px;
 }
 
 .header {
-  display: flex;
+	display: flex;
 }
 
 .videoFooter h1 {
-  font: normal 500 1em Roboto;
-  letter-spacing: 2px;
-  padding-bottom: 20px;
+	font: normal 500 1em Roboto;
+	letter-spacing: 2px;
+	padding-bottom: 20px;
 }
 
 .videoFooter p {
-  padding-bottom: 20px;
+	padding-bottom: 20px;
 }
 
 .videoFooter .music-bar {
-  display: flex;
-  width: 80%;
-  margin: 0;
-  justify-content: flex-start;
-  align-items: flex-start;
-  box-sizing: border-box;
+	display: flex;
+	width: 80%;
+	margin: 0;
+	justify-content: flex-start;
+	align-items: flex-start;
+	box-sizing: border-box;
 }
 
 .music-bar .music-icon {
-  height: 32px;
-  margin-top: 2px;
-  margin-right: 20px;
-  flex-basis: 8%;
+	height: 32px;
+	margin-top: 2px;
+	margin-right: 20px;
+	flex-basis: 8%;
 }
 
 .music-bar .music-title {
-    width: 50%;
-    padding-top: 5px;
-    overflow-x: hidden;
-    flex-grow: 1;
+	width: 50%;
+	padding-top: 5px;
+	overflow-x: hidden;
+	flex-grow: 1;
 }
 
 .music-title p {
-    animation: move-music-title 6s infinite linear;
+	animation: move-music-title 6s infinite linear;
+}
+
+@media only screen and (max-width: 380px) {
+	.videoFooter {
+		top: -26%;
+	}
+}
+
+@media only screen and (max-width: 440px) {
+  .videoFooter {
+    top: -21%
+  }
+}
+
+@media only screen and (max-width: 377px) {
+  .videoFooter {
+    top: -24%;
+  }
+
 }

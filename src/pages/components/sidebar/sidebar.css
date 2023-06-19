@@ -1,25 +1,31 @@
 .sidebar {
-    position: absolute;
-    width: 15%;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    top: 34%;
-    right: 10px;
+	position: absolute;
+	width: 15%;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+	bottom: 6%;
+	right: 10px;
 }
 
 .sidebar .sidebar_options {
-    position: relative;
-    text-align: center;
-    padding: 10px 20px;
+	position: relative;
+	text-align: center;
+	padding: 10px 20px;
 }
 
 .record-img {
-    bottom: 1px;
-    height: 45px;
-    /* filter: invert(1); */
-    animation: spin-record 5s infinite linear;
-  }
+	bottom: 1px;
+	height: 45px;
+	/* filter: invert(1); */
+	animation: spin-record 5s infinite linear;
+}
+
+@media only screen and (max-width: 440px) {
+	.sidebar {
+		bottom: 6%;
+	}
+}

@@ -3,10 +3,15 @@ import Video from "./pages/Video";
 import React, { useEffect, useState } from "react";
 import db from "./config/firebase";
 import { collection, getDocs } from "firebase/firestore/lite";
-import LiveTvIcon from "@mui/icons-material/LiveTv";
-import SearchIcon from "@mui/icons-material/Search";
+
+
 
 function App() {
+	let maxHeight;
+	if (window.innerHeight <= 800) {
+		maxHeight = window.innerHeight
+	}
+
 	const [video, setVideos] = useState([]);
 
 	async function getVideos() {
@@ -21,16 +26,9 @@ function App() {
 	}, []);
 
 	return (
-		<div className="App">
+		<div className="App" style={{ maxHeight: maxHeight }}>
 			<header className="app__video">
-				<nav className="navbar-top">
-					<LiveTvIcon className="live-tv-icon" fontSize="large" />
-					<div className="tabs">
-						<p>Following</p>
-						<p>For You</p>
-					</div>
-					<SearchIcon className="search-icon" fontSize="large" />
-				</nav>
+
 
 				{video.map((item) => {
 					return (

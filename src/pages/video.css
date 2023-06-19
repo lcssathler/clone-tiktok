@@ -5,8 +5,65 @@
     scroll-snap-align: start;
 }
 
+.navbar-top {
+    position: absolute;
+    width: 100%;
+	z-index: 1;
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+	letter-spacing: 1px;
+    padding-top: 10px;
+}
+
+.navbar-top .live-tv-icon {
+    padding-left: 30px;
+}
+
+.navbar-top .tabs {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.tabs p {
+	font: normal 600 18px Montserrat;
+	color: rgba(255, 255, 255, 0.918);
+    margin: 0px 10px;
+} 
+
+.navbar-top .search-icon {
+    padding-right: 30px;
+}
+
+
 .video__player {
     height: 100%;
     width: 100%;
     object-fit: fill;
+}
+
+/* .navbar-bottom {
+	background-color: black;
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	text-align: center;
+	height: 40px;
+	bottom: 2px;
+}
+
+.navbar-bottom .home-icon {
+    padding-left: 30px;
+} */
+
+@media only screen and (max-width:440px) {
+    .navbar-top {
+        padding-top: 25px;
+    }
 }
