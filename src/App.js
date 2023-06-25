@@ -28,8 +28,6 @@ function App() {
 	return (
 		<div className="App" style={{ maxHeight: maxHeight }}>
 			<header className="app__video">
-
-
 				{video.map((item) => {
 					return (
 						<Video

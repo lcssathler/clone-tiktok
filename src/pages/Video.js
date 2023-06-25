@@ -4,11 +4,11 @@ import VideoFooter from "./components/footer/VideoFooter";
 import Sidebar from "./components/sidebar/Sidebar";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
 import SearchIcon from "@mui/icons-material/Search";
-import HomeIcon from '@mui/icons-material/Home';
-import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
-import NewPostIcon from '@mui/icons-material/AddBox';
-import InboxIcon from '@mui/icons-material/Inbox';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import HomeIcon from "@mui/icons-material/Home";
+import GroupOutlinedIcon from "@mui/icons-material/GroupOutlined";
+import NewPostIcon from "@mui/icons-material/AddBox";
+import InboxIcon from "@mui/icons-material/Inbox";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 
 function Video({
 	likes,
@@ -22,15 +22,23 @@ function Video({
 }) {
 	const videoRef = useRef(null);
 	const [play, setPlay] = useState(false);
+
 	function handdleStart() {
 		if (play) {
-			videoRef.current.play();
+			videoRef.current.pause();
 			setPlay(false);
 		} else {
-			videoRef.current.pause();
+			videoRef.current.play();
 			setPlay(true);
 		}
 	}
+
+	window.onwheel = function () {
+		if (play) {
+			videoRef.current.pause();
+			setPlay(false);
+		}
+	};
 
 	return (
 		<div className="video">
@@ -50,6 +58,7 @@ function Video({
 				ref={videoRef}
 				src={url}
 			></video>
+
 			<Sidebar
 				likes={likes}
 				comments={comments}
@@ -60,10 +69,10 @@ function Video({
 
 			<nav className="navbar-bottom">
 				<HomeIcon fontSize="large" className="home-icon" />
-				<GroupOutlinedIcon fontSize="large" className="friends-icon"/>
-				<NewPostIcon fontSize="large" className="new-post-icon"/>
-				<InboxIcon fontSize="large" className="inbox-icon"/>
-				<PersonOutlineIcon fontSize="large" className="perfil-icon"/>
+				<GroupOutlinedIcon fontSize="large" className="friends-icon" />
+				<NewPostIcon fontSize="large" className="new-post-icon" />
+				<InboxIcon fontSize="large" className="inbox-icon" />
+				<PersonOutlineIcon fontSize="large" className="perfil-icon" />
 			</nav>
 		</div>
 	);
