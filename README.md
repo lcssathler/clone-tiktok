@@ -10,7 +10,7 @@
 
 ## 🔗 Links
 
-+ **<a href="https://tiktok-clone-fadca.web.app/">Link do projeto finalizado. CLIQUE AQUI!</a>**
++ **<a href="https://tiktok-clone-fadca.web.app/">Link do projeto: CLIQUE AQUI!</a>**
 
 ## 💻 Funcionalidades
 * Conexão com banco de dados Firebase.
